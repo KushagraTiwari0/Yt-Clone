@@ -73,9 +73,59 @@ body{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    background-color: white;
 }
 
 .search-mic :hover{
+  background-color: #5e5e5e;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+    border-radius: 50%;
+}
+
+
+/* Header Ends */
+
+/* Main Body Start */
+
+.main-Body{
+    height: calc(100vh-70px);
+    display: flex;
+    overflow: hidden;
+}
+
+
+/* Side Bar Start */
+.sidebar{
+    height: 100%;
+    width: 230px;
+    background-color: white;
+    overflow-y:scroll ;
+}
+
+.sidebar-categories{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sidebar-category{
+    align-items: center;
+    padding: 12px 25px;
+    display: flex;
+}
+
+.sidebar-category span{
+    margin-left: 15px;
+}
+
+.sidebar-category :hover{
     background-color: #5e5e5e;
-    border-radius: 100px;
+    cursor: pointer;
 }
