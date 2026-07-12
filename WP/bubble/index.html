@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +13,7 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="bubblelogo.jpg" alt="Bubble Consult Logo">
+                <img src="mainlogo.png" alt="Bubble Consult Logo">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -25,21 +23,20 @@
                     <li><a href="#">BLOG</a></li>
                     <li><a href="#">SHOP</a></li>
                     <li><a href="#">PAGES <span class="arrow">▼</span></a></li>
-                    <li><a href="#">GET IN TOUCH</a></li>
                 </ul>
             </nav>
-           
         </div>
+        <a href="#" class="btn-nav">GET IN TOUCH</a>
     </header>
 
     <section class="hero">
         <div class="hero-container">
             <div class="hero-image-side">
-                <img src="page1.jpg" alt="Abstract 3D Shape">
+                <img src="centresticker.png" alt="Abstract 3D Shape">
             </div>
             <div class="hero-text-side">
                 <div class="hero-mini-brand">
-                    <img src="logo.jpg" alt="Small Logo">
+                    <img src="logosmall.png" alt="Small Logo">
                     <span>Bubble Consult</span>
                 </div>
                 <h1>Take Your Business To The Next Level</h1>
@@ -55,12 +52,12 @@
         <div class="brands-container">
             <div class="brands-title">BRANDS WE'VE WORKED WITH</div>
             <div class="brands-grid">
-                <img src="food.jpg" alt="Super Food">
-                <img src="creative.jpg" alt="Creative Studio">
-                <img src="invent.png" alt="In Motion">
-                <img src="invent.png" alt="In Motion">
+                <img src="superfood.jpg" alt="Super Food">
+                <img src="creativestudio.png" alt="Creative Studio">
+                <img src="inmotion.png" alt="In Motion">
+                <img src="inmotion.png" alt="In Motion">
                 <img src="abstract.jpg" alt="Abstract">
-                <img src="invasion.jpg" alt="Invision Square">
+                <img src="invision.png" alt="Invision Square">
             </div>
         </div>
     </section>
@@ -226,18 +223,73 @@
         </div>
     </section>
 
-    <footer class="simple-footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Bubble Consult. All rights reserved.</p>
-            <div class="footer-socials">
-                <img src="sms.png" alt="Email">
-                <img src="twitter.png" alt="Twitter">
-                <img src="insta.png" alt="Instagram">
-                <img src="linkdin.png" alt="LinkedIn">
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-newsletter">
+                <h3 class="footer-logo">Bubble Consult</h3>
+                <p class="footer-tagline">Join our newsletter to stay up to date on features and releases.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="footer-consent">By subscribing you agree to our <a href="#">Privacy Policy</a> and provide
+                    consent to receive updates from our company.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Column One</h4>
+                <ul>
+                    <li><a href="#">Link One</a></li>
+                    <li><a href="#">Link Two</a></li>
+                    <li><a href="#">Link Three</a></li>
+                    <li><a href="#">Link Four</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Column Two</h4>
+                <ul>
+                    <li><a href="#">Link One</a></li>
+                    <li><a href="#">Link Two</a></li>
+                    <li><a href="#">Link Three</a></li>
+                    <li><a href="#">Link Four</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-follow">
+                <h4>Follow Us</h4>
+                <ul class="footer-social-list">
+                    <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z" />
+                            </svg> Facebook</a></li>
+                    <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.55.22.95.47 1.37.89.42.42.67.82.89 1.37.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.55-.47.95-.89 1.37-.42.42-.82.67-1.37.89-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.55-.22-.95-.47-1.37-.89-.42-.42-.67-.82-.89-1.37-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.55.47-.95.89-1.37.42-.42.82-.67 1.37-.89.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39-.67.67-1.08 1.34-1.39 2.13-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C19.6 1.35 18.93.94 18.14.63c-.76-.3-1.63-.5-2.91-.56C13.95.01 13.54 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z" />
+                            </svg> Instagram</a></li>
+                    <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.95 4.57a9.86 9.86 0 0 1-2.83.78 4.94 4.94 0 0 0 2.17-2.72 9.9 9.9 0 0 1-3.13 1.2 4.92 4.92 0 0 0-8.4 4.49A13.98 13.98 0 0 1 1.64 3.16a4.92 4.92 0 0 0 1.52 6.57A4.9 4.9 0 0 1 .96 9.1v.06a4.92 4.92 0 0 0 3.95 4.83 4.93 4.93 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.87 9.87 0 0 1 .96 19.5a13.94 13.94 0 0 0 7.55 2.21c9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.02-.63a10.01 10.01 0 0 0 2.45-2.5Z" />
+                            </svg> Twitter</a></li>
+                    <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+                            </svg> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026, All right reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies Settings</a>
             </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
