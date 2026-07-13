@@ -16,7 +16,7 @@
                 <img src="mainlogo.png" alt="Bubble Consult Logo">
             </div>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#">PROJECTS</a></li>
                     <li><a href="#">SERVICES</a></li>
                     <li><a href="#">ABOUT US</a></li>
@@ -25,6 +25,11 @@
                     <li><a href="#">PAGES <span class="arrow">▼</span></a></li>
                 </ul>
             </nav>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
         <a href="#" class="btn-nav">GET IN TOUCH</a>
     </header>
@@ -167,30 +172,34 @@
             <div class="contact-form-side">
                 <h2>Contact Us</h2>
                 <p class="form-subtitle">Drop your contact details</p>
-                <form class="actual-form" onsubmit="event.preventDefault();">
+                <form class="actual-form" id="contact-form" novalidate>
                     <div class="form-row">
                         <div class="input-container country-code-container">
-                            <span class="flag-icon">🇺🇸</span>
+                            <img src="americanflag.png" alt="US Flag" class="flag-icon">
                             <span class="code-text">+1</span>
                             <span class="dropdown-arrow">▼</span>
                         </div>
                         <div class="input-container flex-grow">
-                            <input type="text" placeholder="************" required>
+                            <input type="text" id="contact-phone" placeholder="**********" inputmode="numeric"
+                                maxlength="10" required>
                         </div>
                     </div>
+                    <span class="field-error" id="contact-phone-error"></span>
                     <div class="form-row">
                         <div class="input-container full-width">
                             <img src="sms.png" alt="Email Icon" class="input-icon">
-                            <input type="email" placeholder="**********@******" required>
+                            <input type="email" id="contact-email" placeholder="**********@******" required>
                         </div>
                     </div>
+                    <span class="field-error" id="contact-email-error"></span>
                     <p class="form-subtitle label-message">Write us a message</p>
                     <div class="form-row">
                         <div class="input-container full-width">
-                            <textarea rows="3"
+                            <textarea rows="3" id="contact-message"
                                 placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."></textarea>
                         </div>
                     </div>
+                    <span class="field-error" id="contact-message-error"></span>
                     <button type="submit" class="btn-submit">Submit</button>
                 </form>
             </div>
@@ -228,32 +237,35 @@
             <div class="footer-newsletter">
                 <h3 class="footer-logo">Bubble Consult</h3>
                 <p class="footer-tagline">Join our newsletter to stay up to date on features and releases.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="Enter your email" required>
+                <form class="newsletter-form" id="newsletter-form" novalidate>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
                     <button type="submit">Subscribe</button>
                 </form>
+                <span class="field-error" id="newsletter-email-error"></span>
                 <p class="footer-consent">By subscribing you agree to our <a href="#">Privacy Policy</a> and provide
                     consent to receive updates from our company.</p>
             </div>
 
-            <div class="footer-links-col">
-                <h4>Column One</h4>
-                <ul>
-                    <li><a href="#">Link One</a></li>
-                    <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li>
-                    <li><a href="#">Link Four</a></li>
-                </ul>
-            </div>
+            <div class="footer-links-group">
+                <div class="footer-links-col">
+                    <h4>Column One</h4>
+                    <ul>
+                        <li><a href="#">Link One</a></li>
+                        <li><a href="#">Link Two</a></li>
+                        <li><a href="#">Link Three</a></li>
+                        <li><a href="#">Link Four</a></li>
+                    </ul>
+                </div>
 
-            <div class="footer-links-col">
-                <h4>Column Two</h4>
-                <ul>
-                    <li><a href="#">Link One</a></li>
-                    <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li>
-                    <li><a href="#">Link Four</a></li>
-                </ul>
+                <div class="footer-links-col">
+                    <h4>Column Two</h4>
+                    <ul>
+                        <li><a href="#">Link One</a></li>
+                        <li><a href="#">Link Two</a></li>
+                        <li><a href="#">Link Three</a></li>
+                        <li><a href="#">Link Four</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="footer-follow">
@@ -288,6 +300,15 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-box">
+            <div class="popup-icon" id="popup-icon"></div>
+            <h3 class="popup-title" id="popup-title"></h3>
+            <p class="popup-message" id="popup-message"></p>
+            <button class="popup-close" id="popup-close">OK</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
