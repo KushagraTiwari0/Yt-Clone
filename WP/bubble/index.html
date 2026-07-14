@@ -22,7 +22,7 @@
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">BLOG</a></li>
                     <li><a href="#">SHOP</a></li>
-                    <li><a href="#">PAGES <span class="arrow">▼</span></a></li>
+                    <li><a href="#">PAGES<span class="arrow">▼</span></a></li>
                 </ul>
             </nav>
             <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
@@ -120,53 +120,6 @@
         </div>
     </section>
 
-    <section class="testimonials-section">
-        <div class="testimonials-container">
-            <div class="testimonials-left">
-                <img src="thumbsup.png" alt="Thumbs Up Graphic">
-            </div>
-            <div class="testimonials-right">
-                <h2 class="testimonials-title">Testimonials</h2>
-                <div class="testimonial-carousel">
-                    <button class="carousel-arrow prev">&lsaquo;</button>
-                    <div class="testimonial-box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
-                        <span class="testimonial-author">-Mr. John Geller</span>
-                    </div>
-                    <button class="carousel-arrow next">&rsaquo;</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="blogs-section">
-        <div class="blogs-container">
-            <h2 class="section-heading">Blogs & Articles</h2>
-            <div class="blogs-grid">
-                <div class="blog-card">
-                    <div class="blog-image-wrapper">
-                        <img src="mobile phone.png" alt="Blog 1">
-                    </div>
-                    <p class="blog-caption">Lorem ipsum dolor sit Lorem ipsum dolor</p>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image-wrapper">
-                        <img src="spikeballs.png" alt="Blog 2">
-                    </div>
-                    <p class="blog-caption">Lorem ipsum dolor sit Lorem ipsum dolor</p>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image-wrapper">
-                        <img src="boylaptop.png" alt="Blog 3">
-                    </div>
-                    <p class="blog-caption">Lorem ipsum dolor sit Lorem ipsum dolor</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-section">
         <div class="contact-container">
             <div class="contact-form-side">
@@ -214,20 +167,123 @@
             <h2 class="section-heading">The Bubble Team</h2>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-avatar-frame" style="background-image: url('test3.png');"></div>
-                    <p class="team-name">Lorem ipsum dolor sit</p>
-                    <p class="team-role">Lorem ipsum dolor</p>
+                    <img src="test3.png" alt="Team Member">
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar-frame" style="background-image: url('test2.png');"></div>
-                    <p class="team-name">Lorem ipsum dolor sit</p>
-                    <p class="team-role">Lorem ipsum dolor</p>
+                    <img src="test2.png" alt="Team Member">
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar-frame" style="background-image: url('test1.png');"></div>
-                    <p class="team-name">Lorem ipsum dolor sit</p>
-                    <p class="team-role">Lorem ipsum dolor</p>
+                    <img src="test1.png" alt="Team Member">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-left">
+                <img src="thumbsup.png" alt="Thumbs Up Graphic">
+            </div>
+            <div class="testimonials-right">
+                <h2 class="testimonials-title">Testimonials</h2>
+                <div class="testimonial-carousel">
+                    <button class="carousel-arrow prev">&lsaquo;</button>
+                    <div class="testimonial-box">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
+                        <span class="testimonial-author">-Mr. John Geller</span>
+                    </div>
+                    <button class="carousel-arrow next">&rsaquo;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blogs-section">
+        <div class="blogs-container">
+            <h2 class="section-heading">Blogs & Articles</h2>
+            <div class="blogs-grid">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="mobile phone.png" alt="Blog 1">
+                    </div>
+                    <p class="blog-caption">Lorem ipsum dolor sit Lorem ipsum dolor</p>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="spikeballs.png" alt="Blog 2">
+                    </div>
+                    <p class="blog-caption">Lorem ipsum dolor sit Lorem ipsum dolor</p>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="boylaptop.png" alt="Blog 3">
+                    </div>
+                    <p class="blog-caption">Lorem ipsum dolor sit Lorem ipsum dolor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-col register-side">
+                <h2>Create an Account</h2>
+                <p class="form-subtitle">Register to get started with Bubble Consult</p>
+                <form class="actual-form" id="register-form" novalidate>
+                    <div class="form-row">
+                        <div class="input-container full-width">
+                            <input type="text" id="register-name" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                    <span class="field-error" id="register-name-error"></span>
+                    
+                    <div class="form-row">
+                        <div class="input-container full-width">
+                            <input type="email" id="register-email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <span class="field-error" id="register-email-error"></span>
+
+                    <div class="form-row">
+                        <div class="input-container full-width">
+                            <input type="password" id="register-password" placeholder="Password (min. 6 characters)" required>
+                        </div>
+                    </div>
+                    <span class="field-error" id="register-password-error"></span>
+
+                    <div class="form-row">
+                        <div class="input-container full-width">
+                            <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <span class="field-error" id="register-confirm-password-error"></span>
+
+                    <button type="submit" class="btn-submit">Register</button>
+                </form>
+            </div>
+
+            <div class="auth-col login-side">
+                <h2>Welcome Back</h2>
+                <p class="form-subtitle">Login to your account</p>
+                <form class="actual-form" id="login-form" novalidate>
+                    <div class="form-row">
+                        <div class="input-container full-width">
+                            <input type="email" id="login-email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <span class="field-error" id="login-email-error"></span>
+
+                    <div class="form-row">
+                        <div class="input-container full-width">
+                            <input type="password" id="login-password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <span class="field-error" id="login-password-error"></span>
+
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
             </div>
         </div>
     </section>
@@ -300,15 +356,6 @@
             </div>
         </div>
     </footer>
-
-    <div class="popup-overlay" id="popup-overlay">
-        <div class="popup-box">
-            <div class="popup-icon" id="popup-icon"></div>
-            <h3 class="popup-title" id="popup-title"></h3>
-            <p class="popup-message" id="popup-message"></p>
-            <button class="popup-close" id="popup-close">OK</button>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>

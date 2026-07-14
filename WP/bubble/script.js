@@ -76,33 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------- POPUP MODAL ----------
-    const overlay = document.getElementById('popup-overlay');
-    const popupIcon = document.getElementById('popup-icon');
-    const popupTitle = document.getElementById('popup-title');
-    const popupMessage = document.getElementById('popup-message');
-    const popupClose = document.getElementById('popup-close');
-
     function showPopup(type, title, message) {
-        popupIcon.className = 'popup-icon ' + type;
-        popupIcon.textContent = type === 'success' ? '✓' : '!';
-        popupTitle.textContent = title;
-        popupMessage.textContent = message;
-        overlay.classList.add('visible');
-    }
-
-    function hidePopup() {
-        overlay.classList.remove('visible');
-    }
-
-    if (popupClose) popupClose.addEventListener('click', hidePopup);
-    if (overlay) {
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) hidePopup();
-        });
+        alert(`${title}\n\n${message}`);
     }
 
     // ---------- VALIDATION HELPERS ----------
-    const emailPattern = /^[^\s@]+@gmail\.com$/i;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
     const phonePattern = /^[0-9]{10}$/;
 
     function setFieldError(input, errorEl, message) {
@@ -164,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setFieldError(emailInput, emailError, 'Email is required.');
                 isValid = false;
             } else if (!emailPattern.test(emailInput.value.trim())) {
-                setFieldError(emailInput, emailError, 'Enter a valid Gmail address (ending in @gmail.com).');
+                setFieldError(emailInput, emailError, 'Enter a valid email address.');
                 isValid = false;
             } else {
                 clearFieldError(emailInput, emailError);
@@ -207,8 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             if (!emailPattern.test(newsletterEmail.value.trim())) {
-                setFieldError(newsletterEmail, newsletterError, 'Enter a valid Gmail address (ending in @gmail.com).');
-                showPopup('error', 'Invalid email', 'A Gmail address is required (ending in @gmail.com).');
+                setFieldError(newsletterEmail, newsletterError, 'Enter a valid email address.');
+                showPopup('error', 'Invalid email', 'Please enter a valid email address.');
                 return;
             }
 
@@ -219,6 +198,143 @@ document.addEventListener('DOMContentLoaded', () => {
 
         newsletterEmail.addEventListener('input', () => {
             clearFieldError(newsletterEmail, newsletterError);
+        });
+    }
+
+    // ---------- REGISTRATION FORM ----------
+    const registerForm = document.getElementById('register-form');
+    if (registerForm) {
+        const nameInput = document.getElementById('register-name');
+        const emailInput = document.getElementById('register-email');
+        const passwordInput = document.getElementById('register-password');
+        const confirmPasswordInput = document.getElementById('register-confirm-password');
+
+        const nameError = document.getElementById('register-name-error');
+        const emailError = document.getElementById('register-email-error');
+        const passwordError = document.getElementById('register-password-error');
+        const confirmPasswordError = document.getElementById('register-confirm-password-error');
+
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Name validation
+            if (!nameInput.value.trim()) {
+                setFieldError(nameInput, nameError, 'Full name is required.');
+                isValid = false;
+            } else if (nameInput.value.trim().length < 3) {
+                setFieldError(nameInput, nameError, 'Name must be at least 3 characters.');
+                isValid = false;
+            } else {
+                clearFieldError(nameInput, nameError);
+            }
+
+            // Email validation
+            if (!emailInput.value.trim()) {
+                setFieldError(emailInput, emailError, 'Email is required.');
+                isValid = false;
+            } else if (!emailPattern.test(emailInput.value.trim())) {
+                setFieldError(emailInput, emailError, 'Enter a valid email address.');
+                isValid = false;
+            } else {
+                clearFieldError(emailInput, emailError);
+            }
+
+            // Password validation
+            if (!passwordInput.value) {
+                setFieldError(passwordInput, passwordError, 'Password is required.');
+                isValid = false;
+            } else if (passwordInput.value.length < 6) {
+                setFieldError(passwordInput, passwordError, 'Password must be at least 6 characters.');
+                isValid = false;
+            } else {
+                clearFieldError(passwordInput, passwordError);
+            }
+
+            // Confirm Password validation
+            if (!confirmPasswordInput.value) {
+                setFieldError(confirmPasswordInput, confirmPasswordError, 'Please confirm your password.');
+                isValid = false;
+            } else if (confirmPasswordInput.value !== passwordInput.value) {
+                setFieldError(confirmPasswordInput, confirmPasswordError, 'Passwords do not match.');
+                isValid = false;
+            } else {
+                clearFieldError(confirmPasswordInput, confirmPasswordError);
+            }
+
+            if (!isValid) {
+                showPopup('error', 'Registration Failed', 'Please fix the highlighted errors before registering.');
+                return;
+            }
+
+            showPopup('success', 'Registration Success', 'Your account has been created successfully!');
+            registerForm.reset();
+        });
+
+        // Clear error on input
+        [nameInput, emailInput, passwordInput, confirmPasswordInput].forEach((input) => {
+            input.addEventListener('input', () => {
+                const container = input.closest('.input-container');
+                if (container && container.classList.contains('input-invalid')) {
+                    const errorEl = input === nameInput ? nameError :
+                                    input === emailInput ? emailError :
+                                    input === passwordInput ? passwordError : confirmPasswordError;
+                    clearFieldError(input, errorEl);
+                }
+            });
+        });
+    }
+
+    // ---------- LOGIN FORM ----------
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        const emailInput = document.getElementById('login-email');
+        const passwordInput = document.getElementById('login-password');
+
+        const emailError = document.getElementById('login-email-error');
+        const passwordError = document.getElementById('login-password-error');
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            // Email validation
+            if (!emailInput.value.trim()) {
+                setFieldError(emailInput, emailError, 'Email is required.');
+                isValid = false;
+            } else if (!emailPattern.test(emailInput.value.trim())) {
+                setFieldError(emailInput, emailError, 'Enter a valid email address.');
+                isValid = false;
+            } else {
+                clearFieldError(emailInput, emailError);
+            }
+
+            // Password validation
+            if (!passwordInput.value) {
+                setFieldError(passwordInput, passwordError, 'Password is required.');
+                isValid = false;
+            } else {
+                clearFieldError(passwordInput, passwordError);
+            }
+
+            if (!isValid) {
+                showPopup('error', 'Login Failed', 'Please check your email and password.');
+                return;
+            }
+
+            showPopup('success', 'Logged In', 'Welcome back! You have successfully logged in.');
+            loginForm.reset();
+        });
+
+        // Clear error on input
+        [emailInput, passwordInput].forEach((input) => {
+            input.addEventListener('input', () => {
+                const container = input.closest('.input-container');
+                if (container && container.classList.contains('input-invalid')) {
+                    const errorEl = input === emailInput ? emailError : passwordError;
+                    clearFieldError(input, errorEl);
+                }
+            });
         });
     }
 });
